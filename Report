@@ -1,0 +1,34 @@
+University Database Management System in Oracle: Project Report
+Introduction
+This report documents the development of a comprehensive University Database Management System (UDBMS) using Oracle. The project covers the design and implementation of the database schema, including tables, indexes, views, procedures, triggers, and sample data insertion. This system aims to manage various aspects of university operations such as student enrollment, course management, professor assignments, and grade tracking.
+
+Database Design
+The database schema is designed to capture the core entities involved in university operations. These entities include Students, Courses, Departments, Enrollment, Professors, and CourseAssignments. Each entity is represented by a table with appropriate attributes and relationships.
+
+Students
+
+Attributes: StudentID, FirstName, LastName, DOB, Gender, Email, PhoneNumber, Address
+Primary Key: StudentID
+Courses
+
+Attributes: CourseID, CourseName, Credits
+Primary Key: CourseID
+Departments
+
+Attributes: DepartmentID, DepartmentName
+Primary Key: DepartmentID
+Professors
+
+Attributes: ProfessorID, FirstName, LastName, DepartmentID, Email, PhoneNumber
+Primary Key: ProfessorID
+Foreign Key: DepartmentID references Departments(DepartmentID)
+Enrollment
+
+Attributes: EnrollmentID, StudentID, CourseID, EnrollmentDate, Grade
+Primary Key: EnrollmentID
+Foreign Keys: StudentID references Students(StudentID), CourseID references Courses(CourseID)
+CourseAssignments
+
+Attributes: AssignmentID, CourseID, ProfessorID, Semester, Year
+Primary Key: AssignmentID
+Foreign Keys: CourseID references Courses(CourseID), ProfessorID references Professors(ProfessorID)
